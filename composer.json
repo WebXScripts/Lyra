@@ -1,0 +1,55 @@
+{
+    "name": "webxscripts/lyra",
+    "description": "Handle hidden exceptions and send notify",
+    "keywords": [
+        "webxscripts",
+        "lyra"
+    ],
+    "homepage": "https://github.com/webxscripts/lyra",
+    "license": "MIT",
+    "type": "library",
+    "version": "1.0.8",
+    "authors": [
+        {
+            "name": "Piotr WebX Paluszkievvicz",
+            "email": "nevobusiness@gmail.com",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": "^8.0",
+        "illuminate/support": "^9.0"
+    },
+    "require-dev": {
+        "orchestra/testbench": "^7.0",
+        "phpunit/phpunit": "^9.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Webxscripts\\Lyra\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Webxscripts\\Lyra\\Tests\\": "tests"
+        }
+    },
+    "scripts": {
+        "test": "vendor/bin/phpunit",
+        "test-coverage": "vendor/bin/phpunit --coverage-html coverage"
+
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Webxscripts\\Lyra\\LyraServiceProvider"
+            ],
+            "aliases": {
+                "Lyra": "Webxscripts\\Lyra\\LyraFacade"
+            }
+        }
+    }
+}
