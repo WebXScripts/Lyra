@@ -28,9 +28,10 @@ private Lyra $lyra;
 
 public function __construct(..., Lyra $lyra)
 {
-    ...,
+    //...,
     $this->lyra = $lyra;
 }
+
 public function report(Throwable $e): void
 {
     $this->lyra->handle($e, Request::capture());
