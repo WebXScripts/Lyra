@@ -24,6 +24,13 @@ php artisan vendor:publish --provider="Webxscripts\Lyra\LyraServiceProvider" --t
 *Add following line in ```app/Exceptions/Handler.php``` file:*
 
 ```php
+private Lyra $lyra;
+
+public function __construct(..., Lyra $lyra)
+{
+    ...,
+    $this->lyra = $lyra;
+}
 public function report(Throwable $e): void
 {
     $this->lyra->handle($e, Request::capture());
